@@ -1,0 +1,32 @@
+{
+  "extends": "../../config/typescript/tsconfig.base.json",
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedParameters": true,
+    "declaration": false,
+    "target": "ES2021",
+    "outDir": "./build",
+    "baseUrl": "../../",
+    "paths": {
+      "@shared/*": ["shared/*"],
+      "@dal/*": ["services/mindlerapi/src/dal/*"],
+      "@core/*": ["services/mindlerapi/src/core/*"],
+      "@test/*": ["services/mindlerapi/test/*"]
+    },
+    "module": "NodeNext"
+  },
+  "include": [
+    "infra",
+    "./src",
+    "./test",
+    "migrator",
+    "vitest.config.mts",
+    "./src/core/environment.d.ts"
+  ],
+  "exclude": ["examples"]
+}
